@@ -1,2 +1,4 @@
 # RM2025-Internal-Template
-template project for RM2025 Internal
+This is the template project for RM2025 Internal competition.
+
+Initial setup by ZZY.
