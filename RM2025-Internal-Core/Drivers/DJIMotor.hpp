@@ -2,11 +2,10 @@
  * @file DJIMotor.hpp
  * @author - GUO, Zilin
  *         - Your Name
- * @brief This is the DJIMotor template codes for RM2024-Tutorial PA3 and RDC
- * @note  You could directly transplant your code to the RDC after finishing PA3
+ * @brief This is the DJIMotor template codes for RM2025 Internal
  * @note  If you do not like the template I provide for you, you could remove
  * all of them and use your own
- * @copyright This file is only for HKUST Enterprize RM2024 internal
+ * @copyright This file is only for HKUST Enterprize RM2025 Internal
  * competition. All Rights Reserved.
  *
  */
@@ -30,7 +29,7 @@ namespace DJIMotor
  * syntax.
  * @brief However, some neccessary OOP thought should be shown in your code.
  * @brief For example, if you have multiple motors, which is going to happen in
- * RDC (You have at least 4 wheels to control)
+ * Internal (You have at least 4 wheels to control)
  * @brief You are able to write a "template" module for all the abstract motors,
  * and instantiate them with different parameters
  * @brief Instead of copy and paste your codes for four times
@@ -104,8 +103,8 @@ void transmit(uint16_t header);
 /*===========================================================*/
 /**
  * @brief You can define your customized function here
- * @note  It might not be necessary in your PA3, but it's might be beneficial
-for your RDC development progress
+ * @note  It might not be necessary, but it's might be beneficial
+for your Internal development progress
  * @example
  * float get(uint16_t canID);
  *

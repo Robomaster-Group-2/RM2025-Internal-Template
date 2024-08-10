@@ -2,10 +2,10 @@
  * @file DR16.hpp template
  * @author - GUO, Zilin
  *         - Your Name 
- * @brief  This is the DR16 template file directly copy from the PA2
+ * @brief  This is the DR16 template file
  * @date 2023-10-18
  *
- * @copyright This file is only for HKUST Enterprize RM2024 internal
+ * @copyright This file is only for HKUST Enterprize RM2025 internal
  * competition. All Rights Reserved.
  */
 #pragma once // In case of multiple inclusion
