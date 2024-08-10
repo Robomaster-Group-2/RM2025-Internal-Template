@@ -69,3 +69,4 @@ node_modules
 
 /Hardware/Internal-backups
 Hardware/Internal.kicad_prl
+Hardware/fp-info-cache
