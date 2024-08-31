@@ -34,7 +34,7 @@
         #endif
 
         #ifndef BUZZER_TIM
-        #define BUZZER_TIM htim3
+        #define BUZZER_TIM htim2
         #endif
 
         #ifndef BUZZER_TIM_CHANNEL
