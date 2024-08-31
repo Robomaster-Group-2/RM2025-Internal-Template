@@ -6,13 +6,13 @@ This is the template project for RM2025 Internal competition.
 To use this template, clone the template in your terminal with:
 
 ``` bash
-git clone git@github.com:hkustenterprize/RM2025-Internal-Root.git
+git clone git@github.com:hkustenterprize/RM2025-Internal-Template.git
 ```
 
 enter the directory with:
 
 ``` bash
-cd RM2025-Internal-Root
+cd RM2025-Internal-Template
 ```
 
 compile with Makefile
