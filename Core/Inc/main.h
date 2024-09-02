@@ -61,6 +61,8 @@ void Error_Handler(void);
 #define BTN_0_GPIO_Port GPIOC
 #define BTN_1_Pin GPIO_PIN_14
 #define BTN_1_GPIO_Port GPIOC
+#define BUZZER_Pin GPIO_PIN_0
+#define BUZZER_GPIO_Port GPIOA
 #define MPU6500_CS_Pin GPIO_PIN_4
 #define MPU6500_CS_GPIO_Port GPIOA
 #define MPU6500_INT_Pin GPIO_PIN_4

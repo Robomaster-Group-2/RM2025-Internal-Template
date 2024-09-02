@@ -13,20 +13,46 @@
 #include "gpio.h"
 #include "main.h"
 #include "task.h"
-
+#include "tim.h"
+#include "ws2812.hpp"
+#include "math.h"
+#include "stdint.h"
 
 StackType_t uxTestTaskStack[configMINIMAL_STACK_SIZE];
 StaticTask_t xTestTaskTCB;
 
+
 void testTask(void *pvPara)
 {
     HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+    WS2812::init(&htim1, TIM_CHANNEL_1, 10);
 
+    float r_w = 0.076f;
+    float g_w = 0.134f;
+    float b_w = 0.343f;
+    uint8_t r = 0, g = 0, b = 0;
+    
+    float brightness = 20;
+
+    float i = 0;
     while (true)
     {
+        r = (uint8_t)(sin(i * r_w) * brightness + brightness);
+        g = (uint8_t)(sin(i * g_w) * brightness + brightness);
+        b = (uint8_t)(sin(i * b_w) * brightness + brightness);
+        WS2812::setColor(0, r, g, b);
+        WS2812::setColor(1, g, b, r);
+        WS2812::setColor(2, b, r, g);
+        WS2812::setColor(3, r, g, b);
+        WS2812::setColor(4, g, b, r);
+        WS2812::setColor(5, b, r, g);
+        WS2812::setColor(6, r, g, b);
+        WS2812::setColor(7, g, b, r);
+        WS2812::setColor(8, b, r, g);
+        WS2812::setColor(9, r, g, b);
+        i += 0.1f;
         HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
-        // HAL_GPIO_TogglePin(LASER_GPIO_Port, LASER_Pin);
-        vTaskDelay(200);
+        vTaskDelay(10);
     }
 }
 
