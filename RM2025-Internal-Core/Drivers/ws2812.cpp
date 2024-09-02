@@ -4,12 +4,18 @@
 #include "stdint.h"
 #include <string.h>
 
+
+
 namespace WS2812
 {
+#define WS2812_TIM_CLK_FREQ 84000000
+#define WS2812_TIM htim1
+#define WS2812_TIM_CHANNEL TIM_CHANNEL_1
+
 uint8_t led_num = 0;
 uint16_t buffer_size;
-uint32_t buffer[BUFFER_SIZE];
-void init(TIM_HandleTypeDef* htim, uint32_t channel, uint8_t _led_num)
+uint8_t buffer[BUFFER_SIZE];
+void init(uint8_t _led_num)
 {
     assert_param(led_num <= MAX_LED_NUM);
 
@@ -21,9 +27,25 @@ void init(TIM_HandleTypeDef* htim, uint32_t channel, uint8_t _led_num)
     {
         buffer[i] = 2;
     }
+    forceResetTime();
+
+    TIM_HandleTypeDef* htim = &WS2812_TIM;
+
+    htim->Instance->CR1 = 0; // 关闭定时器
+
+    // 配置定时器
+    htim->Instance->PSC = WS2812_TIM_CLK_FREQ / 3200000 - 1; // 设置预分频器，时钟为 84 MHz
+    htim->Instance->ARR = 8 - 1; // 设置自动重载寄存器值
+
+    // 修改计数器的值
+    htim->Instance->CNT = BIT0_WIDTH; // 将计数器设置为 4
+
+    // 更新计数器
+    htim->Instance->EGR |= TIM_EGR_UG; // 触发更新事件
+    
 
     HAL_TIM_PWM_Start_DMA(
-        htim, channel, buffer, buffer_size); // Start the DMA module, in circular mode
+        &WS2812_TIM, WS2812_TIM_CHANNEL, (uint32_t *)buffer, buffer_size); // Start the DMA module, in circular mode
 }
 
 

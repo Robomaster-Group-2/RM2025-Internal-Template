@@ -25,7 +25,7 @@ StaticTask_t xTestTaskTCB;
 void testTask(void *pvPara)
 {
     HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
-    WS2812::init(&htim1, TIM_CHANNEL_1, 10);
+    WS2812::init(10);
 
     float r_w = 0.076f;
     float g_w = 0.134f;
