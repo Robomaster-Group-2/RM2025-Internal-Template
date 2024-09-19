@@ -16,7 +16,7 @@
 namespace WS2812
 {
 void init(uint8_t _led_num);
-void setColor(uint16_t index, uint8_t r, uint8_t g, uint8_t b);
+void blink(uint16_t index, uint8_t r, uint8_t g, uint8_t b);
 void blankAll();
 void forceResetTime();
 }

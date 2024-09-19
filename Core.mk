@@ -50,7 +50,6 @@ MCU = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
 # compile flags
 COMPILERFLAGS = $(MCU)								# MCU
 
-COMPILERFLAGS += -ffreestanding						# No standard library
 COMPILERFLAGS += -fdata-sections					# Place each data item into its own section
 COMPILERFLAGS += -ffunction-sections				# Place each function into its own section
 COMPILERFLAGS += -fstack-usage						# Generate stack usage information

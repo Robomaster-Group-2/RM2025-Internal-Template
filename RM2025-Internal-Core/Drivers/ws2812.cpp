@@ -55,7 +55,7 @@ void forceResetTime()
     memset(buffer + led_num * LED_DATA_SIZE_UNIT, 0, RESET_PWM_SIZE * sizeof(buffer[0]));
 }
 
-void setColor(uint16_t index, uint8_t r, uint8_t g, uint8_t b)
+void blink(uint16_t index, uint8_t r, uint8_t g, uint8_t b)
 {
     if (index >= led_num)
         return;
@@ -67,6 +67,6 @@ void setColor(uint16_t index, uint8_t r, uint8_t g, uint8_t b)
 void blankAll()
 {
     for (int i = 0; i < led_num; i++)
-        setColor(i, 0, 0, 0);
+        blink(i, 0, 0, 0);
 }
 }
