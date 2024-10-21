@@ -8,12 +8,10 @@
  * @copyright Copyright (c) 2022
  */
 #include "AppConfig.h" // Include our customized configuration
-#include "Buzzer.hpp"
 #include "FreeRTOS.h"
 #include "gpio.h"
 #include "main.h"
 #include "task.h"
-#include "ws2812.hpp"
 
 
 StackType_t uxMainTaskStack[configMINIMAL_STACK_SIZE];
