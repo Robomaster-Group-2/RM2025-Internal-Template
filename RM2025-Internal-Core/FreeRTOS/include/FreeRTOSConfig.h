@@ -46,7 +46,7 @@
  */
 #ifndef APP_NAME
 #warning "APP_NAME is not defined"  // This macro is defined in the makefile as TARGET
-#define APP_NAME RM2023_H
+#define APP_NAME RM2025_H
 #endif  // APP_NAME
 
 /**
@@ -81,6 +81,10 @@ extern uint32_t SystemCoreClock;
 #define configUSE_PORT_OPTIMISED_TASK_SELECTION 1
 #define configUSE_MALLOC_FAILED_HOOK 1
 #define configCHECK_FOR_STACK_OVERFLOW 2
+#define TICK_TYPE_WIDTH_16_BITS 16
+#define TICK_TYPE_WIDTH_32_BITS 32
+#define TICK_TYPE_WIDTH_64_BITS 64
+#define configTICK_TYPE_WIDTH_IN_BITS TICK_TYPE_WIDTH_32_BITS
 
 /* Defaults to size_t for backward compatibility, but can be changed
  * if lengths will always be less than the number of bytes in a size_t. */

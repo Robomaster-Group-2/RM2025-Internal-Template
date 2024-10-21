@@ -11,7 +11,7 @@ $(FreeRTOS_DIR)/sources/tasks.c \
 $(FreeRTOS_DIR)/sources/timers.c
 
 FreeRTOS_SRC +=  \
-$(FreeRTOS_DIR)/portable/GCC/ARM_CM3/port.c
+$(FreeRTOS_DIR)/portable/GCC/ARM_CM4/port.c
 
 ifneq ($(FREERTOS_HEAP), 0)
 FreeRTOS_SRC += $(FreeRTOS_DIR)/portable/MemMang/heap_$(FREERTOS_HEAP).c
@@ -23,4 +23,4 @@ CPP_SOURCES += $(FreeRTOS_DIR)/sources/os.cpp \
 $(FreeRTOS_DIR)/Hook.cpp
 
 C_INCLUDES += -I$(FreeRTOS_DIR)/include
-C_INCLUDES += -I$(FreeRTOS_DIR)/portable/GCC/ARM_CM3/
+C_INCLUDES += -I$(FreeRTOS_DIR)/portable/GCC/ARM_CM4/
