@@ -17,6 +17,34 @@
 StackType_t uxMainTaskStack[configMINIMAL_STACK_SIZE];
 StaticTask_t xMainTaskTCB;
 
+#define rxBuffer_size 25
+static uint8_t rxBuffer[rxBuffer_size] ;
+
+struct DecodeData{
+  uint16_t Header ;
+  uint16_t Ch_1 ;
+  uint16_t Ch_2 ;
+  uint16_t Ch_3 ;
+  uint16_t Ch_4 ;
+  uint16_t Ch_5 ;
+  uint16_t Ch_6 ;
+  uint16_t Ch_7 ;
+  uint16_t Ch_8 ;
+  uint16_t Ch_9 ;
+  uint16_t Ch_10 ;
+  uint16_t Ch_11 ;
+  uint16_t Ch_12 ;
+  uint16_t Ch_13 ;
+  uint16_t Ch_14 ;
+  uint16_t Ch_15 ;
+  uint16_t Ch_16 ;
+  uint16_t Ch_17 ;
+  uint16_t Ch_18 ;
+  uint16_t frame_lost ;
+  uint16_t failsafe_activated ;
+  uint16_t Footer ;
+} decodedData ;
+
 // an example task
 void mainTask(void *pvPara) {
 
